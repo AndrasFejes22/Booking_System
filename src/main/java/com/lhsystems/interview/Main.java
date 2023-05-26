@@ -8,6 +8,7 @@ public class Main {
 
     public static void main(String[] args) throws BookingException {
         Passenger p1 = new Passenger("Mr. passenger", "passenger.mister@gmail.com");
+        Passenger p4 = new Passenger("Mr. passenger", "passenger.MR@gmail.com");
         Passenger p2 = new Passenger("Jr. passenger", "passenger.junior@gmail.com");
         Passenger p3 = new Passenger("Mrs. passenger", "passenger.mrs@gmail.com");
         //Booking(Flight flight, int seatNumber, Passenger passenger)
@@ -40,6 +41,7 @@ public class Main {
         System.out.println();
         System.out.println("------------new method test-------------");
         System.out.println("Booking: "+bookingSystem.bookFlight(flight1, 1, p1));
+        System.out.println("Booking: "+bookingSystem.bookFlight(flight1, 11, p4));
         System.out.println();
         // seat taken
         //try {
@@ -51,11 +53,13 @@ public class Main {
         System.out.println("Booking: "+bookingSystem.bookFlight(flight1, 4, p3));
         System.out.println();
         System.out.println("Booking: "+bookingSystem.bookFlight(flight3, 4, p1));
+        System.out.println("Booking: "+bookingSystem.bookFlight(flight3, 14, p4));
+        System.out.println("Booking: "+bookingSystem.bookFlight(flight2, 14, p4));
 
         System.out.println();
         System.out.println("-----------stat-------------");
         bookingSystem.findMostBookedPassenger();
-        bookingSystem.totalBookings();
+        //bookingSystem.totalBookings();
     }
 
 

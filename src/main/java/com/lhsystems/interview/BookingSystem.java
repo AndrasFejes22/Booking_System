@@ -157,10 +157,12 @@ public class BookingSystem {
             passengers.add(collect.get(i).getKey());
         }
 
-        System.out.println(passengers);
-
-        // We would like to reward the passenger with the most booked seats. Therefor we need to find the passenger that has the most booked seats in our bookingsystem
+        //System.out.println(passengers);
+        System.out.println();
+        // We would like to reward the passenger with the most booked seats. Therefore we need to find the passenger that has the most booked seats in our bookingsystem
         // returns which passenger has the most amount of Bookings?
+        System.out.println("Passenger that has the most booked seats in our bookingsystem:");
+        System.out.println(passengers.get(0).getName());
         return passengers.get(0);
     }
 

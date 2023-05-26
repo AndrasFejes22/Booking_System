@@ -30,7 +30,7 @@ public class BookingSystem {
         // throws a BookingException if the seat is already booked or if the flight is fully booked
 
         List<Booking> bookings = flight.getBookings();
-        Booking booking = new Booking(flight,0,new Passenger("Test Doe", "test@gmail.com"));
+        Booking booking = new Booking(flight,0,new Passenger("Test Doe", "test@gmail.com")); //empty constructor would be better
 
         if(flight.getBookings().size() == 0){
 
@@ -116,7 +116,14 @@ public class BookingSystem {
     }
 
     // Comparator for compare two Passenger objects
-    Comparator<Passenger> passengerNameComparator = Comparator.comparing(Passenger::getName);
+    //Comparator<Passenger> passengerNameComparator = Comparator.comparing(Passenger::getName);
+
+    Comparator<Passenger> passengerNameComparator = (Passenger o1, Passenger o2) -> {
+        if(o1.getName().equals(o2.getName())) {
+            return o1.getEmail().compareTo(o2.getEmail());
+        }
+        return o1.getName().compareTo(o2.getName());
+    };
 
     public Passenger findMostBookedPassenger() {
         Map<Passenger, Integer> passengerStatistics = new TreeMap<>(passengerNameComparator);

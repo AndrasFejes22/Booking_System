@@ -25,7 +25,7 @@ public class Flight {
 
 
     public Booking bookSeat(int seatNumber, Passenger passenger) throws BookingException {
-        Booking booking = new Booking(this,0, new Passenger("Test Doe", "test@gmail.com"));
+        Booking booking = new Booking(this,0, new Passenger("Test Doe", "test@gmail.com")); //empty constructor would be better
         List<Booking> bookings = this.getBookings();
 
         if(this.getBookings().size() == 0){
